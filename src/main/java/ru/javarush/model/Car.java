@@ -39,6 +39,8 @@ public class Car {
 
 
     public static class CarBuilder {
+        /* Билдер задает значения по умолчанию для полей, которым значение не задано сеттером. При вызове
+        сеттеров есть возможность пользоваться цепочкой вызовов: ..setModel().setPower(int power).build(); */
 
         private int power = 100;
         private String model = "Default_model";
