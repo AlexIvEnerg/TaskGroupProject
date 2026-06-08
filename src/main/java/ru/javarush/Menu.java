@@ -1,4 +1,4 @@
-package menu;
+package ru.javarush;
 
 import java.util.Scanner;
 
