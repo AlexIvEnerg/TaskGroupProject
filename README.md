@@ -6,37 +6,31 @@
 ## Описание проекта
 Консольное приложение для управления массивом автомобилей. Реализовано заполнение массива (вручную, случайно, из файла), сортировка по трём полям с использованием паттерна Strategy, запись результатов в файл, ручные тесты.
 
----
-
 ## Технологии
 - Java 17
-- Maven (структура проекта)
+- Maven
 - Git
-
----
 
 ## Функционал
 
 ### Основное меню
-1. **Заполнить массив автомобилей** — выбор способа (ручной/случайный/из файла) и длины массива
-2. **Отсортировать массив** — выбор поля для сортировки (мощность/модель/год) и алгоритма
+1. **Заполнить массив автомобилей** — выбор способа (ручной/случайный/из файла) и длины
+2. **Отсортировать массив** — выбор поля (мощность/модель/год) и алгоритма
 3. **Показать текущий массив** — вывод всех автомобилей
 4. **Выход** — завершение программы
 
 ### Паттерн Strategy
-- Интерфейс `Comparator<Car>` — стратегия сравнения
-- Конкретные стратегии: `CarPowerComparator`, `CarModelComparator`, `CarYearComparator`
+- Интерфейс: `Comparator<Car>`
+- Стратегии: `CarPowerComparator`, `CarModelComparator`, `CarYearComparator`
 - Контекст: `SelectionSort.sort(Car[] cars, Comparator<Car> comparator)`
 
 ### Дополнительные задания
 | ДЗ | Описание | Реализация |
 |----|----------|------------|
-| 1 | Сортировка чётных/нечётных значений | `EvenOddSort.java`, пункт 4 в меню |
-| 2 | Запись в файл в режиме добавления | `FileWriterHelper.java`, файл `sorted_cars.txt` |
+| 1 | Сортировка чётных/нечётных | `EvenOddSort.java`, пункт 4 в меню |
+| 2 | Запись в файл (режим добавления) | `FileWriterHelper.java` → `sorted_cars.txt` |
 | 3 | Заполнение через стримы | `IntStream` в `ManualFiller`, `RandomFiller` |
 | 3* | Кастомная коллекция | `CarStorage.java` |
-
----
 
 ## Структура проекта
 src/main/java/ru/javarush/
@@ -65,30 +59,28 @@ src/main/java/ru/javarush/
 src/main/resources/
 └── cars.txt
 
----
+text
+
+### Пояснение к структуре
+- **comparator/** — стратегии сравнения (паттерн Strategy)
+- **filler/** — заполнение массива (ручной, случайный, из файла)
+- **model/** — модели данных (Car с Builder, CarStorage)
+- **sort/** — алгоритмы сортировки
+- **util/** — утилиты (запись в файл)
+- **test/** — ручные тесты
 
 ## Запуск проекта
 
 ### Компиляция
 ```bash
-javac -encoding UTF-8 -d . src/main/java/ru/javarush/Main.java \
-    src/main/java/ru/javarush/Menu.java \
-    src/main/java/ru/javarush/filler/*.java \
-    src/main/java/ru/javarush/util/FileWriterHelper.java \
-    src/main/java/ru/javarush/model/Car.java \
-    src/main/java/ru/javarush/model/CarStorage.java \
-    src/main/java/ru/javarush/comparator/*.java \
-    src/main/java/ru/javarush/sort/SelectionSort.java \
-    src/main/java/ru/javarush/sort/EvenOddSort.java
+javac -encoding UTF-8 -d . src/main/java/ru/javarush/Main.java src/main/java/ru/javarush/Menu.java src/main/java/ru/javarush/filler/*.java src/main/java/ru/javarush/util/FileWriterHelper.java src/main/java/ru/javarush/model/Car.java src/main/java/ru/javarush/model/CarStorage.java src/main/java/ru/javarush/comparator/*.java src/main/java/ru/javarush/sort/SelectionSort.java src/main/java/ru/javarush/sort/EvenOddSort.java
 Запуск
 bash
 java -cp . ru.javarush.Main
 Запуск тестов
 bash
 java -cp . ru.javarush.CarTest
-Пример файла для заполнения (cars.txt)
-Формат: модель;мощность;год-месяц-день
-
+Пример файла cars.txt
 text
 Toyota;150;2020-01-01
 BMW;250;2019-05-15
@@ -108,6 +100,7 @@ SelectionSort по году	✅
 
 GitHub
 Ветка: Kasyanov-Denis
+
 Репозиторий: https://github.com/AlexIvEnerg/TaskGroupProject
 
 Статус выполнения требований
@@ -122,4 +115,3 @@ GitHub
 ДЗ-2 (запись в файл)	✅
 ДЗ-3 (стримы)	✅
 ДЗ-3* (кастомная коллекция)	✅
-
