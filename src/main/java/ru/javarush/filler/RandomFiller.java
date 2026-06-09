@@ -1,7 +1,7 @@
-package filler;
+package ru.javarush.filler;
 
 import model.Car;
-import model.CarStorage;
+import ru.javarush.model.CarStorage;
 
 import java.time.LocalDate;
 import java.util.List;

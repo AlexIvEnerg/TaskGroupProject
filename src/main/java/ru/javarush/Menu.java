@@ -1,14 +1,32 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package ru.javarush;
 
+import ru.javarush.filler.ManualFiller;
+import ru.javarush.filler.RandomFiller;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
+import ru.javarush.comparator.CarModelComparator;
+import ru.javarush.comparator.CarPowerComparator;
+import ru.javarush.comparator.CarYearComparator;
+import ru.javarush.model.Car;
+import ru.javarush.sort.SelectionSort;
+import ru.javarush.util.FileWriterHelper;
 
 public class Menu {
-    private Scanner scanner = new Scanner(System.in);
-    private Object[] currentArray;
-    private int currentLength = 0;
-    
+    private Scanner scanner;
+    private Car[] currentArray;
+
+    public Menu() {
+        this.scanner = new Scanner(System.in);
+    }
+
     public void start() {
-        while (true) {
+        while(true) {
             System.out.println("\n═══════════════════════════════════");
             System.out.println("         ГЛАВНОЕ МЕНЮ");
             System.out.println("═══════════════════════════════════");
@@ -17,18 +35,16 @@ public class Menu {
             System.out.println("3. Показать текущий массив");
             System.out.println("4. Выход");
             System.out.print("Ваш выбор: ");
-            
-            int choice = getIntInput();
-            
-            switch (choice) {
+            int var1 = this.getIntInput();
+            switch (var1) {
                 case 1:
-                    fillArrayMenu();
+                    this.fillArrayMenu();
                     break;
                 case 2:
-                    sortArrayMenu();
+                    this.sortArrayMenu();
                     break;
                 case 3:
-                    showArray();
+                    this.showArray();
                     break;
                 case 4:
                     System.out.println("До свидания!");
@@ -38,93 +54,95 @@ public class Menu {
             }
         }
     }
-    
+
     private void fillArrayMenu() {
         System.out.println("\n--- ВЫБОР СПОСОБА ЗАПОЛНЕНИЯ ---");
         System.out.println("1. Вручную");
         System.out.println("2. Случайно");
         System.out.println("3. Из файла");
         System.out.print("Ваш выбор: ");
-        int fillChoice = getIntInput();
-        System.out.println("Введите длину массива: ");
-        currentLength = getIntInput();
-        currentArray = new Object[currentLength];
-
-        switch (fillChoice) {
-            case 1: currentArray = new ManualFiller().fill(currentLength);
-            break;
-            case 2: currentArray = new RandomFiller().fill(currentLength);
-            break;
-            case 3: currentArray = new FileFiller().fill(currentLength);
-            break;
+        int var1 = this.getIntInput();
+        System.out.print("Введите длину массива: ");
+        int var2 = this.getIntInput();
+        Object var3 = null;
+        List var6;
+        switch (var1) {
+            case 1:
+                ManualFiller var4 = new ManualFiller(this.scanner);
+                var6 = var4.fill(var2);
+                break;
+            case 2:
+                RandomFiller var5 = new RandomFiller();
+                var6 = var5.fill(var2);
+                break;
+            case 3:
+                System.out.println("Заполнение из файла временно недоступно.");
+                return;
+            default:
+                System.out.println("Неверный выбор.");
+                return;
         }
-        // TODO: после реализации классов Car и Filler
+
+        this.currentArray = (Car[])var6.toArray(new Car[0]);
         System.out.println("Массив успешно заполнен!");
     }
-    
+
     private void sortArrayMenu() {
-        if (currentArray == null || currentArray.length == 0) {
+        if (this.currentArray != null && this.currentArray.length != 0) {
+            System.out.println("\n--- ВЫБОР ПОЛЯ ДЛЯ СОРТИРОВКИ ---");
+            System.out.println("1. По мощности");
+            System.out.println("2. По модели");
+            System.out.println("3. По году выпуска");
+            System.out.print("Ваш выбор: ");
+            int var1 = this.getIntInput();
+            Object var2 = null;
+            switch (var1) {
+                case 1:
+                    var2 = new CarPowerComparator();
+                    break;
+                case 2:
+                    var2 = new CarModelComparator();
+                    break;
+                case 3:
+                    var2 = new CarYearComparator();
+                    break;
+                default:
+                    System.out.println("Неверный выбор.");
+                    return;
+            }
+
+            System.out.println("\n--- ДО СОРТИРОВКИ ---");
+            this.showArray();
+            SelectionSort var3 = new SelectionSort();
+            var3.sort(this.currentArray, (Comparator)var2);
+            System.out.println("\n--- ПОСЛЕ СОРТИРОВКИ ---");
+            this.showArray();
+            System.out.println("\nСортировка завершена!");
+            FileWriterHelper.writeCarsToFile(this.currentArray);
+        } else {
             System.out.println("Массив пуст. Сначала заполните его (пункт 1).");
-            return;
         }
-        
-        System.out.println("\n--- ВЫБОР ПОЛЯ ДЛЯ СОРТИРОВКИ ---");
-        System.out.println("1. По мощности");
-        System.out.println("2. По модели");
-        System.out.println("3. По году выпуска");
-        System.out.print("Ваш выбор: ");
-        
-        int fieldChoice = getIntInput();
-        
-        // TODO: после реализации Comparator
-        // Comparator<Object> comparator = null;
-        // switch (fieldChoice) {
-        //     case 1: comparator = new PowerComparator(); break;
-        //     case 2: comparator = new ModelComparator(); break;
-        //     case 3: comparator = new YearComparator(); break;
-        // }
-        
-        System.out.println("\n--- ДО СОРТИРОВКИ ---");
-        showArray();
-        
-        // TODO: после реализации SortStrategy
-        // new SelectionSortStrategy().sort(currentArray, comparator);
-        
-        System.out.println("\n--- ПОСЛЕ СОРТИРОВКИ ---");
-        showArray();
-        System.out.println("\nСортировка завершена!");
     }
-    
+
     private void showArray() {
-        if (currentArray == null || currentArray.length == 0) {
+        if (this.currentArray != null && this.currentArray.length != 0) {
+            for(int var1 = 0; var1 < this.currentArray.length; ++var1) {
+                System.out.println(var1 + 1 + ". " + this.currentArray[var1]);
+            }
+
+        } else {
             System.out.println("Массив пуст. Сначала заполните его (пункт 1).");
-            return;
-        }
-        
-        for (int i = 0; i < currentArray.length; i++) {
-            System.out.println((i + 1) + ". " + currentArray[i]);
         }
     }
-    
+
     private int getIntInput() {
-        while (!scanner.hasNextInt()) {
+        while(!this.scanner.hasNextInt()) {
             System.out.print("Введите число: ");
-            scanner.next();
+            this.scanner.next();
         }
-        int result = scanner.nextInt();
-        scanner.nextLine();
-        return result;
+
+        int var1 = this.scanner.nextInt();
+        this.scanner.nextLine();
+        return var1;
     }
 }
-
-/* class ManualFiller {
-    int currentLength;
-    Car[] currentArray;
-    public ManualFiller(int currentLength) {
-        this.currentLength = currentLength;
-    }
-    currentArray = new Car[]()
-
-    public Car[] fill() {
-    }
-} */
