@@ -40,32 +40,30 @@
 
 ## Структура проекта
 src/main/java/ru/javarush/
-├── Main.java # Точка входа
-├── Menu.java # Главное меню (цикл, выбор действий)
-├── comparator/ # Стратегии сравнения
+├── Main.java
+├── Menu.java
+├── comparator/
 │ ├── CarModelComparator.java
 │ ├── CarPowerComparator.java
 │ └── CarYearComparator.java
-├── filler/ # Заполнение массива
-│ ├── DataFiller.java # Интерфейс
-│ ├── ManualFiller.java # Ручной ввод
-│ ├── RandomFiller.java # Случайные данные
-│ └── FileFiller.java # Чтение из файла
-├── model/ # Модели данных
-│ ├── Car.java # Класс Car с Builder и валидацией
-│ └── CarStorage.java # Кастомная коллекция (ДЗ-3*)
-├── sort/ # Алгоритмы сортировки
-│ ├── SelectionSort.java # Сортировка выбором (контекст Strategy)
-│ └── EvenOddSort.java # Чётные/нечётные (ДЗ-1)
-├── util/ # Утилиты
-│ └── FileWriterHelper.java # Запись в файл (ДЗ-2)
+├── filler/
+│ ├── DataFiller.java
+│ ├── ManualFiller.java
+│ ├── RandomFiller.java
+│ └── FileFiller.java
+├── model/
+│ ├── Car.java
+│ └── CarStorage.java
+├── sort/
+│ ├── SelectionSort.java
+│ └── EvenOddSort.java
+├── util/
+│ └── FileWriterHelper.java
 └── test/
-└── CarTest.java # Ручные тесты (9/9 проходят)
+└── CarTest.java
 
 src/main/resources/
-└── cars.txt # Пример файла для заполнения
-
-text
+└── cars.txt
 
 ---
 
