@@ -1,7 +1,7 @@
-package ru.javarush.filler;
+package com.filler;
 
-import model.Car;
-import ru.javarush.model.CarStorage;
+import com.model.Car;
+import com.model.CarStorage;
 
 
 import java.io.IOException;
@@ -10,15 +10,21 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Objects ;
 
-public class FileFiller {
+public class FileFiller implements  DataFiller {
 
     private static final String FIELD_SEPARATOR = ";" ;
-    public CarStorage fill(String fileName) {
+    private final String fileName ;
+    public FileFiller(String fileName) {
+        this.fileName = fileName ;
+    }
+    @Override
+    public CarStorage fill(int size) {
         try (var lines=Files.lines(Path.of(fileName))) {
             return new CarStorage(
                     lines.filter(line->!line.isBlank())
                     .map(this::parseCar)
                     .filter(Objects::nonNull)
+                            .limit(size)
                     .toList()
             );
         }catch (IOException e){

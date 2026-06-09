@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="35ea6a32-e8d4-49b8-9ba0-4e2a9e27d4cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cars.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sorted_cars.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cars.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/CarWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filler/DataFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/DataFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filler/ManualFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/ManualFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filler/RandomFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/RandomFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/CarStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/CarStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/comparator/CarModelComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarModelComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/comparator/CarPowerComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarPowerComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/comparator/CarYearComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarYearComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/DataFiller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/FileFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/FileFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/ManualFiller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/RandomFiller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/model/CarStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/sort/EvenOddSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sort/EvenOddSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/sort/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sort/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/util/FileWriterHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/FileWriterHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/CarTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AlexIvEnerg/TaskGroupProject&quot;,
+    &quot;accountId&quot;: &quot;c8f6ab7b-e7a5-484a-9863-fa15fc366420&quot;
+  }
+}</component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "git-widget-placeholder": "Merging Dmitriev-Kirill",
+    "last_opened_file_path": "C:/Users/bulet/IdeaProjects/TaskGroupProject"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bulet\IdeaProjects\TaskGroupProject" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.test" />
+      <recent name="com" />
+      <recent name="co" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CarTest">
+    <configuration name="CarTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.CarTest" />
+      <module name="TaskGroupProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Main" />
+      <module name="TaskGroupProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CarTest" />
+      <item itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CarTest" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>

@@ -1,15 +1,17 @@
-package ru.javarush.sort;
+package com.sort;
 
-import ru.javarush.model.Car;
+import com.model.Car;
 import java.util.Comparator;
 
 public class EvenOddSort {
+
     public void evenOddSort(Car[] cars, Comparator<Car> comparator) {
         for (int i = 0; i < cars.length - 1; i++) {
             if (cars[i].getPower() % 2 != 0) {
                 continue;
             } else {
                 int minIndex = i;
+
                 for (int j = i + 1; j < cars.length; j++) {
                     if (cars[j].getPower() % 2 == 0) {
                         if (comparator.compare(cars[j], cars[minIndex]) < 0) {
@@ -17,6 +19,7 @@ public class EvenOddSort {
                         }
                     }
                 }
+
                 if (minIndex != i) {
                     Car temp = cars[i];
                     cars[i] = cars[minIndex];

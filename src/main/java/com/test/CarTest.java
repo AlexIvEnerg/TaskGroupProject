@@ -1,10 +1,11 @@
-package ru.javarush;
+package com.test;
 
-import ru.javarush.model.Car;
-import ru.javarush.comparator.CarPowerComparator;
-import ru.javarush.comparator.CarModelComparator;
-import ru.javarush.comparator.CarYearComparator;
-import ru.javarush.sort.SelectionSort;
+
+import com.comparator.CarModelComparator;
+import com.comparator.CarPowerComparator;
+import com.comparator.CarYearComparator;
+import com.model.Car;
+import com.sort.SelectionSort;
 
 import java.time.LocalDate;
 
@@ -34,11 +35,15 @@ public class CarTest {
     private static void testCarBuilder() {
         try {
             Car car = new Car.CarBuilder()
-                    .setModel("Toyota")
-                    .setPower(150)
-                    .setReleaseYear(LocalDate.of(2020, 1, 1))
+                    .model("Toyota")
+                    .power(150)
+                    .releaseDate(LocalDate.of(2020, 1, 1))
                     .build();
-            if (car.getModel().equals("Toyota") && car.getPower() == 150 && car.getReleaseYear().equals(LocalDate.of(2020, 1, 1))) {
+
+            if (car.getModel().equals("Toyota")
+                    && car.getPower() == 150
+                    && car.getReleaseDate().equals(LocalDate.of(2020, 1, 1))) {
+
                 System.out.println("  OK: Car created correctly");
                 testsPassed++;
             } else {
@@ -54,28 +59,32 @@ public class CarTest {
     // 2. Тест валидации Car.Builder (негативные сценарии)
     private static void testCarBuilderValidation() {
         boolean failed = false;
+
         try {
-            new Car.CarBuilder().setModel(null).build();
+            new Car.CarBuilder().model(null).build();
             System.out.println("  FAIL: null model not rejected");
             testsFailed++;
             failed = true;
         } catch (IllegalArgumentException e) {
             // expected
         }
+
         if (!failed) {
             System.out.println("  OK: null model rejected");
             testsPassed++;
         }
 
         failed = false;
+
         try {
-            new Car.CarBuilder().setPower(5).build();
+            new Car.CarBuilder().power(5).build();
             System.out.println("  FAIL: too low power not rejected");
             testsFailed++;
             failed = true;
         } catch (IllegalArgumentException e) {
             // expected
         }
+
         if (!failed) {
             System.out.println("  OK: low power rejected");
             testsPassed++;
@@ -85,8 +94,10 @@ public class CarTest {
     // 3. Тест CarPowerComparator
     private static void testPowerComparator() {
         CarPowerComparator comp = new CarPowerComparator();
-        Car car1 = new Car.CarBuilder().setModel("A").setPower(100).setReleaseYear(LocalDate.now()).build();
-        Car car2 = new Car.CarBuilder().setModel("B").setPower(200).setReleaseYear(LocalDate.now()).build();
+
+        Car car1 = new Car.CarBuilder().model("A").power(100).releaseDate(LocalDate.now()).build();
+        Car car2 = new Car.CarBuilder().model("B").power(200).releaseDate(LocalDate.now()).build();
+
         if (comp.compare(car1, car2) < 0) {
             System.out.println("  OK: PowerComparator works");
             testsPassed++;
@@ -99,8 +110,10 @@ public class CarTest {
     // 4. Тест CarModelComparator
     private static void testModelComparator() {
         CarModelComparator comp = new CarModelComparator();
-        Car audi = new Car.CarBuilder().setModel("Audi").setPower(100).setReleaseYear(LocalDate.now()).build();
-        Car bmw = new Car.CarBuilder().setModel("BMW").setPower(100).setReleaseYear(LocalDate.now()).build();
+
+        Car audi = new Car.CarBuilder().model("Audi").power(100).releaseDate(LocalDate.now()).build();
+        Car bmw = new Car.CarBuilder().model("BMW").power(100).releaseDate(LocalDate.now()).build();
+
         if (comp.compare(audi, bmw) < 0) {
             System.out.println("  OK: ModelComparator works");
             testsPassed++;
@@ -113,8 +126,10 @@ public class CarTest {
     // 5. Тест CarYearComparator
     private static void testYearComparator() {
         CarYearComparator comp = new CarYearComparator();
-        Car oldCar = new Car.CarBuilder().setModel("Old").setPower(100).setReleaseYear(LocalDate.of(2000, 1, 1)).build();
-        Car newCar = new Car.CarBuilder().setModel("New").setPower(100).setReleaseYear(LocalDate.of(2020, 1, 1)).build();
+
+        Car oldCar = new Car.CarBuilder().model("Old").power(100).releaseDate(LocalDate.of(2000, 1, 1)).build();
+        Car newCar = new Car.CarBuilder().model("New").power(100).releaseDate(LocalDate.of(2020, 1, 1)).build();
+
         if (comp.compare(oldCar, newCar) < 0) {
             System.out.println("  OK: YearComparator works");
             testsPassed++;
@@ -127,12 +142,17 @@ public class CarTest {
     // 6. Тест SelectionSort (по мощности)
     private static void testSelectionSortByPower() {
         Car[] cars = {
-            new Car.CarBuilder().setModel("BMW").setPower(299).setReleaseYear(LocalDate.now()).build(),
-            new Car.CarBuilder().setModel("Audi").setPower(100).setReleaseYear(LocalDate.now()).build(),
-            new Car.CarBuilder().setModel("Toyota").setPower(200).setReleaseYear(LocalDate.now()).build()
+                new Car.CarBuilder().model("BMW").power(299).releaseDate(LocalDate.now()).build(),
+                new Car.CarBuilder().model("Audi").power(100).releaseDate(LocalDate.now()).build(),
+                new Car.CarBuilder().model("Toyota").power(200).releaseDate(LocalDate.now()).build()
         };
+
         new SelectionSort().sort(cars, new CarPowerComparator());
-        if (cars[0].getPower() == 100 && cars[1].getPower() == 200 && cars[2].getPower() == 299) {
+
+        if (cars[0].getPower() == 100
+                && cars[1].getPower() == 200
+                && cars[2].getPower() == 299) {
+
             System.out.println("  OK: SelectionSort by Power works");
             testsPassed++;
         } else {
@@ -144,12 +164,17 @@ public class CarTest {
     // 7. Тест SelectionSort (по модели)
     private static void testSelectionSortByModel() {
         Car[] cars = {
-            new Car.CarBuilder().setModel("BMW").setPower(100).setReleaseYear(LocalDate.now()).build(),
-            new Car.CarBuilder().setModel("Audi").setPower(100).setReleaseYear(LocalDate.now()).build(),
-            new Car.CarBuilder().setModel("Toyota").setPower(100).setReleaseYear(LocalDate.now()).build()
+                new Car.CarBuilder().model("BMW").power(100).releaseDate(LocalDate.now()).build(),
+                new Car.CarBuilder().model("Audi").power(100).releaseDate(LocalDate.now()).build(),
+                new Car.CarBuilder().model("Toyota").power(100).releaseDate(LocalDate.now()).build()
         };
+
         new SelectionSort().sort(cars, new CarModelComparator());
-        if (cars[0].getModel().equals("Audi") && cars[1].getModel().equals("BMW") && cars[2].getModel().equals("Toyota")) {
+
+        if (cars[0].getModel().equals("Audi")
+                && cars[1].getModel().equals("BMW")
+                && cars[2].getModel().equals("Toyota")) {
+
             System.out.println("  OK: SelectionSort by Model works");
             testsPassed++;
         } else {
@@ -161,14 +186,17 @@ public class CarTest {
     // 8. Тест SelectionSort (по году)
     private static void testSelectionSortByYear() {
         Car[] cars = {
-            new Car.CarBuilder().setModel("BMW").setPower(100).setReleaseYear(LocalDate.of(2020, 1, 1)).build(),
-            new Car.CarBuilder().setModel("Audi").setPower(100).setReleaseYear(LocalDate.of(2010, 1, 1)).build(),
-            new Car.CarBuilder().setModel("Toyota").setPower(100).setReleaseYear(LocalDate.of(2015, 1, 1)).build()
+                new Car.CarBuilder().model("BMW").power(100).releaseDate(LocalDate.of(2020, 1, 1)).build(),
+                new Car.CarBuilder().model("Audi").power(100).releaseDate(LocalDate.of(2010, 1, 1)).build(),
+                new Car.CarBuilder().model("Toyota").power(100).releaseDate(LocalDate.of(2015, 1, 1)).build()
         };
+
         new SelectionSort().sort(cars, new CarYearComparator());
-        if (cars[0].getReleaseYear().equals(LocalDate.of(2010, 1, 1)) &&
-            cars[1].getReleaseYear().equals(LocalDate.of(2015, 1, 1)) &&
-            cars[2].getReleaseYear().equals(LocalDate.of(2020, 1, 1))) {
+
+        if (cars[0].getReleaseDate().equals(LocalDate.of(2010, 1, 1))
+                && cars[1].getReleaseDate().equals(LocalDate.of(2015, 1, 1))
+                && cars[2].getReleaseDate().equals(LocalDate.of(2020, 1, 1))) {
+
             System.out.println("  OK: SelectionSort by Year works");
             testsPassed++;
         } else {

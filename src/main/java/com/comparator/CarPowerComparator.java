@@ -1,6 +1,7 @@
-package ru.javarush.comparator;
+package com.comparator;
 
-import ru.javarush.model.Car;
+import com.model.Car;
+
 import java.util.Comparator;
 
 public class CarPowerComparator implements Comparator<Car> {
