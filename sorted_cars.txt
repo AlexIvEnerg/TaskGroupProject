@@ -1,0 +1,12 @@
+=== Отсортированные автомобили ===
+Car{model= Volkswagen, power= 83, releaseYear= 2015-11-30}
+Car{model= Suzuki, power= 85, releaseYear= 2018-08-19}
+Car{model= Bentley, power= 218, releaseYear= 2008-12-22}
+=== Конец записи ===
+
+=== Sorted cars ===
+Car{model= BMW, power= 154, releaseYear= 2013-01-02}
+Car{model= Skoda, power= 179, releaseYear= 2020-02-25}
+Car{model= Smart, power= 236, releaseYear= 2008-05-16}
+=== End of record ===
+

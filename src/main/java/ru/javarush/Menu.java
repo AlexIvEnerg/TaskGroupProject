@@ -1,12 +1,20 @@
-package menu;
+package ru.javarush;
 
+import ru.javarush.util.FileWriterHelper;
+import ru.javarush.model.Car;
+import ru.javarush.comparator.CarPowerComparator;
+import ru.javarush.comparator.CarModelComparator;
+import ru.javarush.comparator.CarYearComparator;
+import ru.javarush.sort.SelectionSort;
+import filler.ManualFiller;
+import filler.RandomFiller;
+
+import java.util.List;
 import java.util.Scanner;
-import java.util.Comparator;
 
 public class Menu {
     private Scanner scanner = new Scanner(System.in);
-    private Object[] currentArray;
-    private int currentLength = 0;
+    private Car[] currentArray;
     
     public void start() {
         while (true) {
@@ -46,20 +54,29 @@ public class Menu {
         System.out.println("2. Случайно");
         System.out.println("3. Из файла");
         System.out.print("Ваш выбор: ");
-        
         int fillChoice = getIntInput();
-        
         System.out.print("Введите длину массива: ");
-        currentLength = getIntInput();
-        currentArray = new Object[currentLength];
+        int length = getIntInput();
         
-        // TODO: после реализации классов Car и Filler
-        // switch (fillChoice) {
-        //     case 1: currentArray = new ManualFiller().fill(currentLength); break;
-        //     case 2: currentArray = new RandomFiller().fill(currentLength); break;
-        //     case 3: currentArray = new FileFiller().fill(currentLength); break;
-        // }
+        List<Car> carList = null;
+        switch (fillChoice) {
+            case 1:
+                ManualFiller manualFiller = new ManualFiller(scanner);
+                carList = manualFiller.fill(length);
+                break;
+            case 2:
+                RandomFiller randomFiller = new RandomFiller();
+                carList = randomFiller.fill(length);
+                break;
+            case 3:
+                System.out.println("Заполнение из файла временно недоступно.");
+                return;
+            default:
+                System.out.println("Неверный выбор.");
+                return;
+        }
         
+        currentArray = carList.toArray(new Car[0]);
         System.out.println("Массив успешно заполнен!");
     }
     
@@ -77,23 +94,34 @@ public class Menu {
         
         int fieldChoice = getIntInput();
         
-        // TODO: после реализации Comparator
-        // Comparator<Object> comparator = null;
-        // switch (fieldChoice) {
-        //     case 1: comparator = new PowerComparator(); break;
-        //     case 2: comparator = new ModelComparator(); break;
-        //     case 3: comparator = new YearComparator(); break;
-        // }
+        java.util.Comparator<Car> comparator = null;
+        switch (fieldChoice) {
+            case 1:
+                comparator = new CarPowerComparator();
+                break;
+            case 2:
+                comparator = new CarModelComparator();
+                break;
+            case 3:
+                comparator = new CarYearComparator();
+                break;
+            default:
+                System.out.println("Неверный выбор.");
+                return;
+        }
         
         System.out.println("\n--- ДО СОРТИРОВКИ ---");
         showArray();
         
-        // TODO: после реализации SortStrategy
-        // new SelectionSortStrategy().sort(currentArray, comparator);
+        SelectionSort sorter = new SelectionSort();
+        sorter.sort(currentArray, comparator);
         
         System.out.println("\n--- ПОСЛЕ СОРТИРОВКИ ---");
         showArray();
         System.out.println("\nСортировка завершена!");
+        
+        // Доп. задание №2: запись в файл
+        FileWriterHelper.writeCarsToFile(currentArray);
     }
     
     private void showArray() {
