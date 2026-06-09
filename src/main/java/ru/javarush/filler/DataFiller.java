@@ -1,7 +1,8 @@
 package ru.javarush.filler;
 
-import ru.javarush.model.CarStorage;
+import java.util.List;
+import ru.javarush.model.Car;
 
 public interface DataFiller {
-    CarStorage fill(int size ) ;
+    List<Car> fill(int var1);
 }
