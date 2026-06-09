@@ -10,3 +10,9 @@ Car{model= Skoda, power= 179, releaseYear= 2020-02-25}
 Car{model= Smart, power= 236, releaseYear= 2008-05-16}
 === End of record ===
 
+=== Sorted cars ===
+Car{model= Toyota, power= 150, releaseYear= 2020-01-01}
+Car{model= Audi, power= 200, releaseYear= 2021-03-10}
+Car{model= BMW, power= 250, releaseYear= 2019-05-15}
+=== End of record ===
+

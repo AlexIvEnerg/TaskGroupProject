@@ -2,14 +2,16 @@ package ru.javarush;
 
 import ru.javarush.util.FileWriterHelper;
 import ru.javarush.model.Car;
+import ru.javarush.model.CarStorage;
 import ru.javarush.comparator.CarPowerComparator;
 import ru.javarush.comparator.CarModelComparator;
 import ru.javarush.comparator.CarYearComparator;
 import ru.javarush.sort.SelectionSort;
-import filler.ManualFiller;
-import filler.RandomFiller;
+import ru.javarush.sort.EvenOddSort;
+import ru.javarush.filler.ManualFiller;
+import ru.javarush.filler.RandomFiller;
+import ru.javarush.filler.FileFiller;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -48,37 +50,46 @@ public class Menu {
         }
     }
     
-    private void fillArrayMenu() {
-        System.out.println("\n--- ВЫБОР СПОСОБА ЗАПОЛНЕНИЯ ---");
-        System.out.println("1. Вручную");
-        System.out.println("2. Случайно");
-        System.out.println("3. Из файла");
-        System.out.print("Ваш выбор: ");
-        int fillChoice = getIntInput();
-        System.out.print("Введите длину массива: ");
-        int length = getIntInput();
-        
-        List<Car> carList = null;
-        switch (fillChoice) {
-            case 1:
-                ManualFiller manualFiller = new ManualFiller(scanner);
-                carList = manualFiller.fill(length);
-                break;
-            case 2:
-                RandomFiller randomFiller = new RandomFiller();
-                carList = randomFiller.fill(length);
-                break;
-            case 3:
-                System.out.println("Заполнение из файла временно недоступно.");
+private void fillArrayMenu() {
+    System.out.println("\n--- ВЫБОР СПОСОБА ЗАПОЛНЕНИЯ ---");
+    System.out.println("1. Вручную");
+    System.out.println("2. Случайно");
+    System.out.println("3. Из файла");
+    System.out.print("Ваш выбор: ");
+    int fillChoice = scanner.nextInt();
+    System.out.print("Введите длину массива: ");
+    int length = scanner.nextInt();
+    scanner.nextLine();
+    
+    CarStorage carStorage = null;
+    switch (fillChoice) {
+        case 1:
+            ManualFiller manualFiller = new ManualFiller(scanner);
+            carStorage = manualFiller.fill(length);
+            break;
+        case 2:
+            RandomFiller randomFiller = new RandomFiller();
+            carStorage = randomFiller.fill(length);
+            break;
+        case 3:
+            System.out.print("Введите имя файла: ");
+            String fileName = scanner.nextLine();
+            try {
+                FileFiller fileFiller = new FileFiller();
+                carStorage = fileFiller.fill(fileName);
+            } catch (RuntimeException e) {
+                System.out.println("Ошибка: файл '" + fileName + "' не найден.");
                 return;
-            default:
-                System.out.println("Неверный выбор.");
-                return;
-        }
-        
-        currentArray = carList.toArray(new Car[0]);
-        System.out.println("Массив успешно заполнен!");
+            }
+            break;
+        default:
+            System.out.println("Неверный выбор.");
+            return;
     }
+    
+    currentArray = carStorage.getCars().toArray(new Car[0]);
+    System.out.println("Массив успешно заполнен!");
+}
     
     private void sortArrayMenu() {
         if (currentArray == null || currentArray.length == 0) {
@@ -90,6 +101,7 @@ public class Menu {
         System.out.println("1. По мощности");
         System.out.println("2. По модели");
         System.out.println("3. По году выпуска");
+        System.out.println("4. По мощности (чётные/нечётные)");
         System.out.print("Ваш выбор: ");
         
         int fieldChoice = getIntInput();
@@ -105,6 +117,14 @@ public class Menu {
             case 3:
                 comparator = new CarYearComparator();
                 break;
+            case 4:
+                EvenOddSort evenOddSorter = new EvenOddSort();
+                evenOddSorter.evenOddSort(currentArray, new CarPowerComparator());
+                System.out.println("\n--- ПОСЛЕ СОРТИРОВКИ ---");
+                showArray();
+                System.out.println("\nСортировка завершена!");
+                FileWriterHelper.writeCarsToFile(currentArray);
+                return;
             default:
                 System.out.println("Неверный выбор.");
                 return;
@@ -120,13 +140,12 @@ public class Menu {
         showArray();
         System.out.println("\nСортировка завершена!");
         
-        // Доп. задание №2: запись в файл
         FileWriterHelper.writeCarsToFile(currentArray);
     }
     
     private void showArray() {
         if (currentArray == null || currentArray.length == 0) {
-            System.out.println("Массив пуст. Сначала заполните его (пункт 1).");
+            System.out.println("Массив пуст.");
             return;
         }
         
@@ -136,12 +155,6 @@ public class Menu {
     }
     
     private int getIntInput() {
-        while (!scanner.hasNextInt()) {
-            System.out.print("Введите число: ");
-            scanner.next();
-        }
-        int result = scanner.nextInt();
-        scanner.nextLine();
-        return result;
+        return scanner.nextInt();
     }
 }

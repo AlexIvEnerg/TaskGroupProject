@@ -1,6 +1,8 @@
-package filler;
+package ru.javarush.filler;
 
 import ru.javarush.model.Car;
+import ru.javarush.model.CarStorage;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.List;
@@ -9,18 +11,19 @@ import java.util.stream.IntStream;
 
 public class ManualFiller implements DataFiller {
     private final Scanner scanner;
-    
+
     public ManualFiller(Scanner scanner) {
         this.scanner = scanner;
     }
-    
+
     @Override
-    public List<Car> fill(int size) {
-        return IntStream.range(0, size)
+    public CarStorage fill(int size) {
+        List<Car> cars = IntStream.range(0, size)
                 .mapToObj(i -> createCar())
                 .toList();
+        return new CarStorage(cars);
     }
-    
+
     private Car createCar() {
         while (true) {
             try {
