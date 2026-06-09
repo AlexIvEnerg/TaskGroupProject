@@ -33,33 +33,34 @@
 | 3* | Кастомная коллекция | `CarStorage.java` |
 
 ## Структура проекта
+
+```
 src/main/java/ru/javarush/
 ├── Main.java
 ├── Menu.java
 ├── comparator/
-│ ├── CarModelComparator.java
-│ ├── CarPowerComparator.java
-│ └── CarYearComparator.java
+│   ├── CarModelComparator.java
+│   ├── CarPowerComparator.java
+│   └── CarYearComparator.java
 ├── filler/
-│ ├── DataFiller.java
-│ ├── ManualFiller.java
-│ ├── RandomFiller.java
-│ └── FileFiller.java
+│   ├── DataFiller.java
+│   ├── ManualFiller.java
+│   ├── RandomFiller.java
+│   └── FileFiller.java
 ├── model/
-│ ├── Car.java
-│ └── CarStorage.java
+│   ├── Car.java
+│   └── CarStorage.java
 ├── sort/
-│ ├── SelectionSort.java
-│ └── EvenOddSort.java
+│   ├── SelectionSort.java
+│   └── EvenOddSort.java
 ├── util/
-│ └── FileWriterHelper.java
+│   └── FileWriterHelper.java
 └── test/
-└── CarTest.java
+    └── CarTest.java
 
 src/main/resources/
 └── cars.txt
-
-text
+```
 
 ### Пояснение к структуре
 - **comparator/** — стратегии сравнения (паттерн Strategy)
