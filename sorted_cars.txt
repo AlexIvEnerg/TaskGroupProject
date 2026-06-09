@@ -1,0 +1,12 @@
+=== Sorted cars ===
+Car{com.model= Renault, power= 114, releaseYear= 2021-10-14}
+Car{com.model= Nissan, power= 144, releaseYear= 2020-05-30}
+Car{com.model= Skoda, power= 150, releaseYear= 2019-12-05}
+Car{com.model= Kia, power= 150, releaseYear= 2021-04-12}
+Car{com.model= Peugeot, power= 150, releaseYear= 2022-06-11}
+Car{com.model= Subaru, power= 156, releaseYear= 2020-03-22}
+Car{com.model= Mazda, power= 194, releaseYear= 2019-11-15}
+Car{com.model= Volvo, power= 249, releaseYear= 2021-07-08}
+Car{com.model= Lexus, power= 296, releaseYear= 2022-01-10}
+=== End of record ===
+

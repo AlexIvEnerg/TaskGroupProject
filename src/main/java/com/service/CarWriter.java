@@ -1,6 +1,6 @@
-package service;
+package com.service;
 
-import model.Car;
+import com.model.Car;
 
 import java.io.IOException;
 import java.nio.file.Files;

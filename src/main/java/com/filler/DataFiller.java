@@ -1,6 +1,6 @@
-package filler;
+package com.filler;
 
-import model.CarStorage;
+import com.model.CarStorage;
 
 public interface DataFiller {
     CarStorage fill(int size ) ;

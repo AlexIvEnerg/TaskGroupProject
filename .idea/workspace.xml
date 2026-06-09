@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="35ea6a32-e8d4-49b8-9ba0-4e2a9e27d4cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cars.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cars.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarModelComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarPowerComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarYearComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sort/EvenOddSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sort/SelectionSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/CarTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/FileWriterHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filler/DataFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/DataFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filler/FileFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/FileFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filler/ManualFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/ManualFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filler/RandomFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/RandomFiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CarStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/CarStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CarWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/CarWriter.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AlexIvEnerg/TaskGroupProject",
+    "accountId": "c8f6ab7b-e7a5-484a-9863-fa15fc366420"
+  }
+}]]></component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "git-widget-placeholder": "Bazhenov-Pavel",
+    "last_opened_file_path": "C:/Users/bulet/IdeaProjects/TaskGroupProject"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bulet\IdeaProjects\TaskGroupProject" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.test" />
+      <recent name="com" />
+      <recent name="co" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CarTest">
+    <configuration name="CarTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.CarTest" />
+      <module name="TaskGroupProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Main" />
+      <module name="TaskGroupProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="TaskGroupProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="TaskGroupProject" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CarTest" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>
