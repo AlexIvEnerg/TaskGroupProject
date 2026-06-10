@@ -104,16 +104,6 @@ model/CarStorage.java
 
 ---
 
-## 🔧 Service layer
-
-
-service/CarWriter.java
-
-
-Отвечает за запись данных в файл.
-
----
-
 ## 🛠 Util
 
 
