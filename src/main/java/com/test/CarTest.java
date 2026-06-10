@@ -6,6 +6,8 @@ import com.comparator.CarPowerComparator;
 import com.comparator.CarYearComparator;
 import com.model.Car;
 import com.sort.SelectionSort;
+import java.util.List;
+import com.util.CountService;
 
 import java.time.LocalDate;
 
@@ -25,6 +27,7 @@ public class CarTest {
         testSelectionSortByPower();
         testSelectionSortByModel();
         testSelectionSortByYear();
+        testCountByModel();
 
         System.out.println("\n=== TEST RESULTS ===");
         System.out.println("Passed: " + testsPassed);
@@ -201,6 +204,25 @@ public class CarTest {
             testsPassed++;
         } else {
             System.out.println("  FAIL: SelectionSort by Year failed");
+            testsFailed++;
+        }
+    }
+    // 9. Тест CountService (по модели)
+    private static void testCountByModel() {
+        List<Car> cars = List.of(
+                new Car.CarBuilder().model("BMW").power(100).releaseDate(LocalDate.now()).build(),
+                new Car.CarBuilder().model("BMW").power(120).releaseDate(LocalDate.now()).build(),
+                new Car.CarBuilder().model("Audi").power(150).releaseDate(LocalDate.now()).build(),
+                new Car.CarBuilder().model("BMW").power(200).releaseDate(LocalDate.now()).build()
+        );
+
+        int result = CountService.countByModel(cars, "BMW");
+
+        if (result == 3) {
+            System.out.println("  OK: CountByModel works");
+            testsPassed++;
+        } else {
+            System.out.println("  FAIL: CountByModel failed (got " + result + ")");
             testsFailed++;
         }
     }

@@ -5,31 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35ea6a32-e8d4-49b8-9ba0-4e2a9e27d4cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cars.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sorted_cars.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cars.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/CarWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/filler/DataFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/DataFiller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/filler/ManualFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/ManualFiller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/filler/RandomFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/RandomFiller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/CarStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/CarStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/comparator/CarModelComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarModelComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/comparator/CarPowerComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarPowerComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/comparator/CarYearComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comparator/CarYearComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/DataFiller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/FileFiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filler/FileFiller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/ManualFiller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/filler/RandomFiller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/model/CarStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/sort/EvenOddSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sort/EvenOddSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/sort/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sort/SelectionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/javarush/util/FileWriterHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/FileWriterHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/CarTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/CountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/CarTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +24,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AlexIvEnerg/TaskGroupProject&quot;,
-    &quot;accountId&quot;: &quot;c8f6ab7b-e7a5-484a-9863-fa15fc366420&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "dmitrievkirill1"
   }
-}</component>
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AlexIvEnerg/TaskGroupProject.git",
+    "accountId": "a6885c36-a16d-46c4-940c-1b0ca4567276"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3Ew2DolqtCi8kVTIWOZVaV4zIhZ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
-    "git-widget-placeholder": "Merging Dmitriev-Kirill",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Dmitriev-Kirill",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/bulet/IdeaProjects/TaskGroupProject"
   }
 }]]></component>
@@ -111,6 +108,13 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35ea6a32-e8d4-49b8-9ba0-4e2a9e27d4cd" name="Changes" comment="" />
+      <created>1781075194806</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781075194806</updated>
+    </task>
     <servers />
   </component>
 </project>
