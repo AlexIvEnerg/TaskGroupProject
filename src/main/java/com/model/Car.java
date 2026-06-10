@@ -1,4 +1,5 @@
-package ru.javarush.model;
+package com.model;
+
 
 import java.time.LocalDate;
 
@@ -8,12 +9,12 @@ public class Car {
 
     private final int power;
     private final String model;
-    private final LocalDate releaseYear;
+    private final LocalDate releaseDate;
 
     private Car(CarBuilder carBuilder) {
         this.power = carBuilder.power;
         this.model = carBuilder.model;
-        this.releaseYear = carBuilder.releaseYear;
+        this.releaseDate = carBuilder.releaseDate;
     }
 
     public int getPower() {
@@ -24,16 +25,16 @@ public class Car {
         return model;
     }
 
-    public LocalDate getReleaseYear() {
-        return releaseYear;
+    public LocalDate getReleaseDate() {
+        return releaseDate;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "model= " + model +
+                "com.model= " + model +
                 ", power= " + power +
-                ", releaseYear= " + releaseYear +
+                ", releaseYear= " + releaseDate +
                 '}';
     }
 
@@ -44,12 +45,12 @@ public class Car {
 
         private int power = 100;
         private String model = "Default_model";
-        private LocalDate releaseYear = LocalDate.now();
+        private LocalDate releaseDate = LocalDate.now();
 
 
-        public CarBuilder setModel(String model) {
+        public CarBuilder model(String model) {
             if (model == null || model.isBlank()) {
-                throw new IllegalArgumentException("model is empty/null");
+                throw new IllegalArgumentException("com.model is empty/null");
             } else if (model.length() < 1 || model.length() > 20) {
                 throw new IllegalArgumentException("Model length is shorter than 1 or more than 20 symbols");
             } else {
@@ -58,7 +59,7 @@ public class Car {
             return this;
         }
 
-        public CarBuilder setPower(int power) {
+        public CarBuilder power(int power) {
             if (power > 10 && power < 300) {
                 this.power = power;
             } else {
@@ -67,14 +68,14 @@ public class Car {
             return this;
         }
 
-        public CarBuilder setReleaseYear(LocalDate releaseYear) {
-            if (releaseYear == null) {
+        public CarBuilder releaseDate(LocalDate releaseDate) {
+            if (releaseDate == null) {
                 throw new IllegalArgumentException("Date of release can't to be null");
-            } else if (releaseYear.isBefore(LocalDate.parse("1950-01-01")) ||
-                    releaseYear.isAfter(LocalDate.now())) {
+            } else if (releaseDate.isBefore(LocalDate.parse("1950-01-01")) ||
+                    releaseDate.isAfter(LocalDate.now())) {
                 throw new IllegalArgumentException("Date of release is before than 1950-01-01 or after current time");
             } else {
-                this.releaseYear = releaseYear;
+                this.releaseDate = releaseDate;
             }
             return this;
         }
